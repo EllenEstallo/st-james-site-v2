@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saint James The Less</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('new-church-photo.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Saint James The Less</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: Arial, sans-serif;
+				background-image: url("new-church-photo.png");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				width: 100vw;
+				height: 100vh;
+				overflow: hidden;
+			}
 
-        /* .container {
+			/* .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
@@ -28,320 +31,341 @@
             border: 2px solid #333;
         } */
 
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: transparent;
-            padding: 2rem 4.5rem;
-            z-index: 1000;
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
-            gap: 2rem;
-        }
+			.navbar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				background-color: transparent;
+				padding: 2rem 4.5rem;
+				z-index: 1000;
+				display: flex;
+				justify-content: flex-end;
+				align-items: flex-start;
+				gap: 2rem;
+			}
 
-        .corner-logo {
-            position: fixed;
-            top: 1rem;
-            left: 7rem;
-            height: 5rem;
-            width: auto;
-            z-index: 1002;
-        }
-        .navbar-right {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
+			.corner-logo {
+				position: fixed;
+				top: 1rem;
+				left: 7rem;
+				height: 5rem;
+				width: auto;
+				z-index: 1002;
+			}
+			.navbar-right {
+				display: flex;
+				gap: 3rem;
+				align-items: center;
+			}
 
-        .navbar-right a {
-            color: #F8F6E4;
-            /* color of nav links */
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 1.25rem;
-        
-            text-shadow: none;
-            outline: none;
-            border: none;
-            background: none;
-            font-weight: normal;
-        }
+			.navbar-right a {
+				color: #f8f6e4;
+				/* color of nav links */
+				text-decoration: none;
+				font-family: Arial, sans-serif;
+				font-size: 1.25rem;
 
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+				text-shadow: none;
+				outline: none;
+				border: none;
+				background: none;
+				font-weight: normal;
+			}
 
-        .dropdown-toggle {
-            cursor: pointer;
-        }
+			.dropdown {
+				position: relative;
+				display: inline-block;
+			}
 
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: transparent;
-            /* min-width: 250px; */
-            width: 200px;
-            padding: 1rem 0 0 0;
-            z-index: 1001;
-        }
+			.dropdown-toggle {
+				cursor: pointer;
+			}
 
-        .dropdown-menu-content {
-            background-color: #F8F6E4;
-            /* same color as */
-            border-radius: 8px;
-            padding: 0.5rem 0;
-            box-shadow: none;
-        }
+			.dropdown-menu {
+				display: none;
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: transparent;
+				/* min-width: 250px; */
+				width: 200px;
+				padding: 1rem 0 0 0;
+				z-index: 1001;
+			}
 
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
+			.dropdown-menu-content {
+				background-color: #f8f6e4;
+				/* same color as */
+				border-radius: 8px;
+				padding: 0.5rem 0;
+				box-shadow: none;
+			}
 
-        .dropdown-menu a {
-            display: block;
-            padding: 0.4rem 1rem 0.4rem 1rem;
-            color: #333;
-            text-decoration: none;
-            font-size: 0.95rem;
-            text-shadow: none;
-            outline: none;
-            border: none;
-            background: none;
-            font-weight: normal;
-            transition: all 0.3s ease;
-        }
+			.dropdown:hover .dropdown-menu {
+				display: block;
+			}
 
-        .dropdown-menu a:hover {
-            background-color: #F4E2B5;
-        }
+			.dropdown-menu a {
+				display: block;
+				padding: 0.4rem 1rem 0.4rem 1rem;
+				color: #333;
+				text-decoration: none;
+				font-size: 0.95rem;
+				text-shadow: none;
+				outline: none;
+				border: none;
+				background: none;
+				font-weight: normal;
+				transition: all 0.3s ease;
+			}
 
-        /* Desktop-only darker hover */
-        /* @media (min-width: 769px) {
-            .dropdown-menu a:hover {
-                background-color: #E0C88F; /* slightly darker than previous */
-            
-         
+			.dropdown-menu a:hover {
+				background-color: #f4e2b5;
+			}
 
-        .dropdown-submenu {
-            margin-left: 1.5rem;
-        }
+			.dropdown-submenu {
+				margin-left: 1.5rem;
+			}
 
-       
+			/* Branding text below the corner logo */
+			.corner-branding {
+				position: fixed;
+				top: calc(1rem + 5.5rem);
+				left: 6rem;
+				z-index: 1001;
+			}
 
+			.logo-text {
+				font-family: "Bebas Neue", sans-serif;
+				font-size: 9rem;
 
-        /* Branding text below the corner logo */
-        .corner-branding {
-            position: fixed;
-            top: calc(1rem + 5.5rem);
-            left: 6rem;
-            z-index: 1001;
-        }
+				color: #f8f6e4;
+				/* same color as navlink and dropdown menu content*/
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+				margin-top: 1rem;
+				line-height: 1;
+			}
 
-        .logo-text {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 9rem;
-        
-            color: #F8F6E4;
-            /* same color as navlink and dropdown menu content*/
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            margin-top: 1rem;
-            line-height: 1;
-        }
+			.logo-subtitle {
+				font-family: "Bebas Neue", sans-serif;
+				font-size: 9rem;
+				color: #f8f6e4;
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 
-        .logo-subtitle {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 9rem;
-            color: #F8F6E4;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-           
-            margin-top: -1.5rem;
-            line-height: 1;
-        }
+				margin-top: -1.5rem;
+				line-height: 1;
+			}
 
-        .logo-church-type {
-            font-family: Arial, sans-serif;
-            font-size: 2rem;
-            color: #F8F6E4;
-            /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
-            margin-top: -1rem;
-            line-height: 1;
-            margin-left: 1rem;
-        }
+			.logo-church-type {
+				font-family: Arial, sans-serif;
+				font-size: 2rem;
+				color: #f8f6e4;
+				/* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+				margin-top: -1rem;
+				line-height: 1;
+				margin-left: 1rem;
+			}
 
-        /* Show hamburger button on mobile */
-        #hamburger {
-            display: none;
-            background: transparent;
-            border: 0;
-            /* color: #F1ECC8; */
-            color: #F8F6E4;
-            /* same color as navlink */
-            font-size: 2rem;
-            cursor: pointer;
-        }
+			/* Show hamburger button on mobile */
+			#hamburger {
+				display: none;
+				background: transparent;
+				border: 0;
+				/* color: #F1ECC8; */
+				color: #f8f6e4;
+				/* same color as navlink */
+				font-size: 2rem;
+				cursor: pointer;
+			}
 
-        
+			/* adjusted corner-branding on mobile */
+			@media (max-width: 768px) {
+				/* no logo on homepage of mobile */
+				.corner-logo {
+					display: none;
+				}
 
-        /* adjusted corner-branding on mobile */
-        @media (max-width: 768px) {
-            /* no logo on homepage of mobile */
-            .corner-logo { display: none; }
+				/* adjusted corner-branding on mobile */
+				.corner-branding {
+					left: 2.25rem;
+					top: 1.25rem;
+				}
+				.corner-branding .logo-text {
+					font-size: 4rem;
+					margin-top: 0.75rem;
+				}
+				.corner-branding .logo-subtitle {
+					font-size: 4rem;
+					margin-top: 0;
+				}
+				.corner-branding .logo-church-type {
+					font-size: 1rem;
+					margin-top: 0;
+					margin-left: 0.1rem;
+				}
+			}
 
-             /* adjusted corner-branding on mobile */
-            .corner-branding { left: 2.25rem; top: 1.25rem; }
-            .corner-branding .logo-text { font-size: 4rem; margin-top: 0.75rem; }
-            .corner-branding .logo-subtitle { font-size: 4rem; margin-top: 0; }
-            .corner-branding .logo-church-type { font-size: 1rem; margin-top: 0; margin-left: 0.1rem}}
-        
-    /*  hamburger on mobile */
-        @media (max-width: 768px) {
-            #hamburger { display: block; font-size: 3rem; }
-            .navbar-right { display: none; }
-            /* Reduce top/right padding so hamburger is closer to corner */
-            .navbar { padding: 0.8rem 1.5rem; gap: 1rem; }
-        }
+			/*  hamburger on mobile */
+			@media (max-width: 768px) {
+				#hamburger {
+					display: block;
+					font-size: 3rem;
+				}
+				.navbar-right {
+					display: none;
+				}
+				/* Reduce top/right padding so hamburger is closer to corner */
+				.navbar {
+					padding: 0.8rem 1.5rem;
+					gap: 1rem;
+				}
+			}
 
-        /* adjusted corner-branding on mobile */
-        /* @media (max-width: 768px) {
+			/* adjusted corner-branding on mobile */
+			/* @media (max-width: 768px) {
             .corner-branding { left: 2.25rem; top: 1.25rem; }
             .corner-branding .logo-text { font-size: 4rem; margin-top: 0.75rem; }
             .corner-branding .logo-subtitle { font-size: 4rem; margin-top: 0; }
             .corner-branding .logo-church-type { font-size: 1rem; margin-top: 0; margin-left: 0.1rem}}
          */
 
-        /* Mobile slide-in menu (left → right) */
-        @media (max-width: 768px) {
-            #screen {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: -100vw;
-                width: 68vw;
-                height: 100vh;
-                background-color: rgba(44, 104, 175, 0.8);
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-start;
-                gap: 1.25rem;
-                padding: 16rem 1.25rem 2rem 2.3rem;
-                transition: left 0.3s ease;
-                z-index: 1001;
-                text-align: left;
-            }
-            #screen .dropdown-menu { 
-                margin-left: 7rem; 
-                margin-top: -.5rem;
-                width: 250px;}
-            }
-            #screen.active { left: 0; }
+			/* Mobile slide-in menu (left → right) */
+			@media (max-width: 768px) {
+				#screen {
+					display: flex;
+					position: fixed;
+					top: 0;
+					left: -100vw;
+					width: 68vw;
+					height: 100vh;
+					background-color: rgba(44, 104, 175, 0.8);
+					flex-direction: column;
+					align-items: flex-start;
+					justify-content: flex-start;
+					gap: 1.25rem;
+					padding: 16rem 1.25rem 2rem 2.3rem;
+					transition: left 0.3s ease;
+					z-index: 1001;
+					text-align: left;
+				}
+				#screen .dropdown-menu {
+					margin-left: 7rem;
+					margin-top: -0.5rem;
+					width: 250px;
+				}
+			}
+			#screen.active {
+				left: 0;
+			}
 
-            .navbar-right a {
-                font-size: 1.6rem;}
+			.navbar-right a {
+				font-size: 1.6rem;
+			}
 
-           .dropdown-menu a {
-                font-size: 1rem;
-                
-            
-            }
-        
+			.dropdown-menu a {
+				font-size: 1rem;
+			}
 
+			/* Desktop-only darker hover */
+			@media (min-width: 769px) {
+				.dropdown-menu a:hover {
+					background-color: #e0c88f; /* slightly darker than previous */
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<a href="index.html"
+			><img src="original-icon.png" alt="Church Icon" class="corner-logo"
+		/></a>
+		<div class="corner-branding">
+			<div class="logo-text">ST. JAMES</div>
+			<div class="logo-subtitle">THE LESS</div>
+			<div class="logo-church-type">Roman Catholic Church</div>
+		</div>
+		<nav class="navbar">
+			<button
+				id="hamburger"
+				type="button"
+				onclick="toggleMenu()"
+				aria-label="Toggle menu"
+			>
+				&#9776;
+			</button>
+			<div class="navbar-right" id="screen">
+				<div class="dropdown">
+					<a href="aboutus.html" class="dropdown-toggle">About Us</a>
+					<div class="dropdown-menu">
+						<div class="dropdown-menu-content">
+							<a href="aboutus.html">Our Parish Mission</a>
+							<a href="#servant-leaders">Servant Leaders</a>
+							<a href="#parish-life">Parish Life</a>
+							<div class="dropdown-submenu">
+								<a href="#parish-membership">Parish Membership</a>
+								<a href="#parish-news">Parish News</a>
+								<a href="#ministries-volunteer">Ministries</a>
+							</div>
+							<a href="#religious-education">Religious Education</a>
+							<div class="dropdown-submenu">
+								<a href="#ccd">CCD</a>
+								<a href="#ocia-rcia">OCIA/RCIA</a>
+								<a href="#faith-resources">Faith Resources</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="dropdown">
+					<a href="#mass-times" class="dropdown-toggle">Mass Times</a>
+					<div class="dropdown-menu">
+						<div class="dropdown-menu-content">
+							<a href="#special-events">Special Events</a>
+							<a href="#mass-schedule">Our Mass Schedule</a>
+							<a href="#prayer-reconciliation">Prayer & Reconciliation</a>
+							<a href="#parish-calendar">Our Parish Calendar</a>
+						</div>
+					</div>
+				</div>
+				<div class="dropdown">
+					<a href="#sacraments" class="dropdown-toggle">Sacraments</a>
+					<div class="dropdown-menu">
+						<div class="dropdown-menu-content">
+							<a href="#baptism">Baptism</a>
+							<a href="#marriage">Marriage</a>
+							<a href="#communion-homebound">For the Homebound</a>
+							<a href="#anointing-sick">Anointing of the Sick</a>
+							<a href="#funerals">Funerals</a>
+						</div>
+					</div>
+				</div>
+				<div class="dropdown">
+					<a href="#contact" class="dropdown-toggle">Contact Us</a>
+					<div class="dropdown-menu">
+						<div class="dropdown-menu-content">
+							<a href="#office-hours-location">Office Hours & Location</a>
+							<a href="#mass-offering-remembrance">Mass Offering</a>
+							<a href="#donate">Donate</a>
+							<a href="#contact-form">Contact Form</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
 
-        /* Desktop-only darker hover */
-        @media (min-width: 769px) {
-            .dropdown-menu a:hover {
-                background-color: #E0C88F; /* slightly darker than previous */
-            }
-        }
-    </style>
-</head>
-<body>
-    <a href="index.html"><img src="original-icon.png" alt="Church Icon" class="corner-logo"></a>
-    <div class="corner-branding">
-        <div class="logo-text">ST. JAMES</div>
-        <div class="logo-subtitle">THE LESS</div>
-        <div class="logo-church-type">Roman Catholic Church</div>
-    </div>
-    <nav class="navbar">
-        <button id="hamburger" type="button" onclick="toggleMenu()" aria-label="Toggle menu">&#9776;</button>
-        <div class="navbar-right" id="screen">
-            <div class="dropdown">
-                <a href="aboutus.html" class="dropdown-toggle">About Us</a>
-                <div class="dropdown-menu">
-                    <div class="dropdown-menu-content">
-                        <a href="aboutus.html">Our Parish Mission</a>
-                        <a href="#servant-leaders">Servant Leaders</a>
-                        <a href="#parish-life">Parish Life</a>
-                        <div class="dropdown-submenu">
-                            <a href="#parish-membership">Parish Membership</a>
-                            <a href="#parish-news">Parish News</a>
-                            <a href="#ministries-volunteer">Ministries</a>
-                        </div>
-                        <a href="#religious-education">Religious Education</a>
-                        <div class="dropdown-submenu">
-                            <a href="#ccd">CCD</a>
-                            <a href="#ocia-rcia">OCIA/RCIA</a>
-                            <a href="#faith-resources">Faith Resources</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#mass-times" class="dropdown-toggle">Mass Times</a>
-                <div class="dropdown-menu">
-                    <div class="dropdown-menu-content">
-                        <a href="#special-events">Special Events</a>
-                        <a href="#mass-schedule">Our Mass Schedule</a>
-                        <a href="#prayer-reconciliation">Prayer & Reconciliation</a>
-                        <a href="#parish-calendar">Our Parish Calendar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#sacraments" class="dropdown-toggle">Sacraments</a>
-                <div class="dropdown-menu">
-                    <div class="dropdown-menu-content">
-                        <a href="#baptism">Baptism</a>
-                        <a href="#marriage">Marriage</a>
-                        <a href="#communion-homebound">For the Homebound</a>
-                        <a href="#anointing-sick">Anointing of the Sick</a>
-                        <a href="#funerals">Funerals</a>
-                    </div>
-                </div>
-            </div>
-            <div class="dropdown">
-                <a href="#contact" class="dropdown-toggle">Contact Us</a>
-                <div class="dropdown-menu">
-                    <div class="dropdown-menu-content">
-                        <a href="#office-hours-location">Office Hours & Location</a>
-                        <a href="#mass-offering-remembrance">Mass Offering</a>
-                        <a href="#donate">Donate</a>
-                        <a href="#contact-form">Contact Form</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+		<script>
+			hamburgerCharacter = "&#9776;";
+			crossCharacter = "&#10005;";
 
-    <script>
-        hamburgerCharacter = "&#9776;";
-        crossCharacter = "&#10005;";
+			function toggleMenu() {
+				const screen = document.getElementById("screen");
+				const hamburger = document.getElementById("hamburger");
 
-        function toggleMenu() {
-            const screen = document.getElementById("screen");
-            const hamburger = document.getElementById("hamburger");
-
-            screen.classList.toggle("active");
-            hamburger.innerHTML = screen.classList.contains("active")
-                ? crossCharacter
-                : hamburgerCharacter;
-        }
-    </script>
-</body>
+				screen.classList.toggle("active");
+				hamburger.innerHTML = screen.classList.contains("active")
+					? crossCharacter
+					: hamburgerCharacter;
+			}
+		</script>
+	</body>
 </html>
