@@ -45,7 +45,7 @@
         .corner-logo {
             position: fixed;
             top: 1rem;
-            left: 6rem;
+            left: 7rem;
             height: 5rem;
             width: auto;
             z-index: 1002;
@@ -58,6 +58,7 @@
 
         .navbar-right a {
             color: #F8F6E4;
+            /* color of nav links */
             text-decoration: none;
             font-family: Arial, sans-serif;
             font-size: 1.25rem;
@@ -93,6 +94,7 @@
 
         .dropdown-menu-content {
             background-color: #F8F6E4;
+            /* same color as */
             border-radius: 8px;
             padding: 0.5rem 0;
             box-shadow: none;
@@ -121,17 +123,17 @@
         }
 
         /* Desktop-only darker hover */
-        @media (min-width: 769px) {
+        /* @media (min-width: 769px) {
             .dropdown-menu a:hover {
                 background-color: #E0C88F; /* slightly darker than previous */
-            }
-        }
+            
+         
 
         .dropdown-submenu {
             margin-left: 1.5rem;
         }
 
-        /* Top-left corner logo */ 
+       
 
 
         /* Branding text below the corner logo */
@@ -147,6 +149,7 @@
             font-size: 9rem;
         
             color: #F8F6E4;
+            /* same color as navlink and dropdown menu content*/
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             margin-top: 1rem;
             line-height: 1;
@@ -177,10 +180,27 @@
             display: none;
             background: transparent;
             border: 0;
-            color: #F1ECC8;
+            /* color: #F1ECC8; */
+            color: #F8F6E4;
+            /* same color as navlink */
             font-size: 2rem;
             cursor: pointer;
         }
+
+        
+
+        /* adjusted corner-branding on mobile */
+        @media (max-width: 768px) {
+            /* no logo on homepage of mobile */
+            .corner-logo { display: none; }
+
+             /* adjusted corner-branding on mobile */
+            .corner-branding { left: 2.25rem; top: 1.25rem; }
+            .corner-branding .logo-text { font-size: 4rem; margin-top: 0.75rem; }
+            .corner-branding .logo-subtitle { font-size: 4rem; margin-top: 0; }
+            .corner-branding .logo-church-type { font-size: 1rem; margin-top: 0; margin-left: 0.1rem}}
+        
+    /*  hamburger on mobile */
         @media (max-width: 768px) {
             #hamburger { display: block; font-size: 3rem; }
             .navbar-right { display: none; }
@@ -188,19 +208,13 @@
             .navbar { padding: 0.8rem 1.5rem; gap: 1rem; }
         }
 
-        /* Hide corner logo on mobile */
-        @media (max-width: 768px) {
-            .corner-logo { display: none; }
-        }
-
-        /* Removed mobile @media block below */
-        /* Mobile-specific overrides for branding */
-        @media (max-width: 768px) {
+        /* adjusted corner-branding on mobile */
+        /* @media (max-width: 768px) {
             .corner-branding { left: 2.25rem; top: 1.25rem; }
             .corner-branding .logo-text { font-size: 4rem; margin-top: 0.75rem; }
             .corner-branding .logo-subtitle { font-size: 4rem; margin-top: 0; }
             .corner-branding .logo-church-type { font-size: 1rem; margin-top: 0; margin-left: 0.1rem}}
-        
+         */
 
         /* Mobile slide-in menu (left → right) */
         @media (max-width: 768px) {
@@ -209,7 +223,7 @@
                 position: fixed;
                 top: 0;
                 left: -100vw;
-                width: 60vw;
+                width: 68vw;
                 height: 100vh;
                 background-color: rgba(44, 104, 175, 0.8);
                 flex-direction: column;
@@ -221,8 +235,29 @@
                 z-index: 1001;
                 text-align: left;
             }
-            #screen .dropdown-menu { margin-left: 5.75rem; }
+            #screen .dropdown-menu { 
+                margin-left: 7rem; 
+                margin-top: -.5rem;
+                width: 250px;}
+            }
             #screen.active { left: 0; }
+
+            .navbar-right a {
+                font-size: 1.6rem;}
+
+           .dropdown-menu a {
+                font-size: 1rem;
+                
+            
+            }
+        
+
+
+        /* Desktop-only darker hover */
+        @media (min-width: 769px) {
+            .dropdown-menu a:hover {
+                background-color: #E0C88F; /* slightly darker than previous */
+            }
         }
     </style>
 </head>
